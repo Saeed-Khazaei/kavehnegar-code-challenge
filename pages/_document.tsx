@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import Layout from "../components/Layout";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -13,11 +14,13 @@ class MyDocument extends Document {
   }
 
   render = () => (
-    <Html dir="ltr" lang="fa">
+    <Html dir="rtl" lang="fa">
       <Head />
       <body>
-        <Main />
-        <NextScript />
+        <Layout>
+          <Main />
+          <NextScript />
+        </Layout>
       </body>
     </Html>
   );
