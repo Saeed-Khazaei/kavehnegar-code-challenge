@@ -9,7 +9,7 @@ export interface TicketsResponse extends TicketsStatus {
   message: string;
   user: string;
   support: string;
-  supportMessages: string[];
+  supportMessage: string;
 }
 
 export interface TicketsSendData {
