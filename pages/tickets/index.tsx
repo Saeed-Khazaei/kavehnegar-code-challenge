@@ -19,7 +19,10 @@ const Tickets: NextPage = () => {
               <th scope="col" className="py-3 px-6 whitespace-nowrap">
                 موضوع تیکت
               </th>
-              <th scope="col" className="py-3 px-6 whitespace-nowrap">
+              <th
+                scope="col"
+                className="py-3 px-6 whitespace-nowrap text-center"
+              >
                 تاریخ به روز رسانی
               </th>
               <th
@@ -36,7 +39,7 @@ const Tickets: NextPage = () => {
                 Apple MacBook Pro 17"
               </td>
               <td className="py-4 px-6 whitespace-nowrap">1</td>
-              <td className="py-4 px-6 whitespace-nowrap">1</td>
+              <td className="py-4 px-6 whitespace-nowrap text-center">1</td>
               <td className="rtl:last:rounded-l-lg ltr:last:rounded-r-lg py-4 px-6 whitespace-nowrap">
                 <div className="flex flex-row justify-between	">
                   <div className="flex flex-row items-center gap-2">
@@ -61,9 +64,9 @@ const Tickets: NextPage = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                     </div>
@@ -76,7 +79,7 @@ const Tickets: NextPage = () => {
                 Apple MacBook Pro 17"
               </td>
               <td className="py-4 px-6 whitespace-nowrap">1</td>
-              <td className="py-4 px-6 whitespace-nowrap">1</td>
+              <td className="py-4 px-6 whitespace-nowrap text-center">1</td>
               <td className="rtl:last:rounded-l-lg ltr:last:rounded-r-lg py-4 px-6 whitespace-nowrap">
                 <div className="flex flex-row justify-between	">
                   <div className="flex flex-row items-center gap-2">
@@ -101,9 +104,9 @@ const Tickets: NextPage = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                     </div>
@@ -116,7 +119,7 @@ const Tickets: NextPage = () => {
                 Apple MacBook Pro 17"
               </td>
               <td className="py-4 px-6 whitespace-nowrap">1</td>
-              <td className="py-4 px-6 whitespace-nowrap">1</td>
+              <td className="py-4 px-6 whitespace-nowrap text-center">1</td>
               <td className="rtl:last:rounded-l-lg ltr:last:rounded-r-lg py-4 px-6 whitespace-nowrap">
                 <div className="flex flex-row justify-between	">
                   <div className="flex flex-row items-center gap-2">
@@ -141,9 +144,9 @@ const Tickets: NextPage = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                     </div>
