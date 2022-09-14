@@ -1,11 +1,8 @@
 import React, { FC } from "react";
 import Image from "next/image";
+import { TicketsStatus } from "../models/ticketsModel";
 
-interface StatusProps {
-  status: "pending" | "answered" | "closed";
-}
-
-const Status: FC<StatusProps> = ({ status }) => {
+const Status: FC<TicketsStatus> = ({ status }) => {
   const returnStatsComponent = () => {
     switch (status) {
       case "pending":
