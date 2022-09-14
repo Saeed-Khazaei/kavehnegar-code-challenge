@@ -10,13 +10,13 @@ export const useCloseTicketForm = () => {
   const id = router.query.id as string
 
   const onCloseTicket = () => {
-    return { id }
+    closeTicket(id)
   };
-  const onSuccess = (e: AxiosResponse<{ id: string }>) => {
+  const onSuccess = () => {
     router.push(`/tickets`)
   };
 
-  const { mutate, isLoading } = useCloseTicketData(onSuccess);
+  const { mutate: closeTicket, isLoading } = useCloseTicketData(onSuccess);
 
   const { data, refetch } = useQuery(
     "ticket",

@@ -61,6 +61,7 @@ const TicketDetails = () => {
           </div>
           <div className="flex items-center justify-center w-11 h-11 "></div>
         </div>
+        <button onClick={onCloseTicket}>CLOSE</button>
       </div>
     </div>
   );

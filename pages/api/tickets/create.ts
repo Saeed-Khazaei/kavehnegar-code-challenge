@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     "status": "pending",
     "user": "سعید خزائی",
     "support": "",
-    "supportMessages": [],
+    "supportMessage": '',
     ...body
   };
   saveDbDatas([...db, data])

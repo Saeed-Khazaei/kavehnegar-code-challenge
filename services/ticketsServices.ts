@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { TicketsResponse, TicketsSendData } from "../models/ticketsModel";
-import { getTicketNextApi, getTicketsNextApi, postTicketNextApi } from "../utils/endpoints";
+import { getTicketsNextApi, postTicketNextApi, ticketNextApi } from "../utils/endpoints";
 
 
 export default {
@@ -15,9 +15,9 @@ export default {
     return await axios.get<TicketsResponse[]>(getTicketsNextApi);
   },
   async getTicket(id: string) {
-    return await axios.get<TicketsResponse>(`${getTicketNextApi}?id=${id}`);
+    return await axios.get<TicketsResponse>(`${ticketNextApi}?id=${id}`);
   },
   async closeTicket(id: string) {
-    return await axios.delete(`${getTicketNextApi}?id=${id}`);
+    return await axios.delete(`${ticketNextApi}?id=${id}`);
   },
 }
