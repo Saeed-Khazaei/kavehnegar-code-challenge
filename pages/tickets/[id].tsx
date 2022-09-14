@@ -4,7 +4,7 @@ import Status from "../../components/Status";
 
 const fakeData = {
   id: 2,
-  received: new Date(),
+  received: "2021/04/19 16:11:30",
   title: "فاکتور رسمی",
   message: "متن تیکت درخواست شده",
   status: "answered",
@@ -19,7 +19,7 @@ const TicketDetails = () => {
       <div className="flex flex-row justify-between mb-2">
         <div className="text-2xl font-bold">فاکتور رسمی</div>
         <div className="flex flex-col gap-2">
-          <span>{new Date().toLocaleDateString("fa-IR")}</span>
+          <span>{new Date(fakeData.received).toLocaleDateString("fa-IR")}</span>
           <div className="flex flex-row items-center gap-2">
             <Status status={fakeData.status} />
           </div>
