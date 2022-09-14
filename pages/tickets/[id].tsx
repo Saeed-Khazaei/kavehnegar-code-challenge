@@ -1,7 +1,84 @@
 import React from "react";
-
-const Id = () => {
-  return <div>Id</div>;
+import Image from "next/image";
+const TicketDetails = () => {
+  return (
+    <div className="bg-white px-10 py-9 rounded-lg divide-y">
+      <div className="flex flex-row justify-between mb-2">
+        <div className="text-2xl font-bold">فاکتور رسمی</div>
+        <div className="flex flex-col gap-2">
+          <span>1401/01/30</span>
+          <div className="flex flex-row items-center gap-2">
+            <Image
+              src="/icons/checked.svg"
+              layout="fixed"
+              width="14px"
+              height="14px"
+            />
+            <span>پاسخ داده شده</span>
+          </div>
+        </div>
+      </div>
+      <div className="pt-9 flex flex-col gap-4 px-16">
+        <div className="flex flex-row items-end gap-x-2.5">
+          <div className="flex items-center justify-center w-11 h-11 rounded-full"></div>
+          <div className="flex-auto w-64 bg-red-50 mb-7 rounded-2xl  rounded-bl-none px-10 py-5">
+            <div className="font-bold mb-5">پشتیبانی; ماندانا موحدی</div>
+            <div>این یک متن آزمایشی برای امتحان پاسخ تیکت هاست.</div>
+          </div>
+          <div className="flex items-center justify-center w-11 h-11 bg-pink-300 rounded-full	 ">
+            <Image
+              src="/icons/support.svg"
+              layout="fixed"
+              width="14px"
+              height="14px"
+            />
+          </div>
+        </div>
+        <div className="flex flex-row items-end gap-x-2.5 ">
+          <div className="flex items-center justify-center w-11 h-11 bg-blue-100 rounded-full">
+            <Image
+              src="/icons/user.svg"
+              layout="fixed"
+              width="14px"
+              height="14px"
+            />
+          </div>
+          <div className="flex-auto w-64 bg-gray-50 mb-7 rounded-2xl  rounded-bl-none px-10 py-5">
+            <div className="font-bold mb-5">علی صالحی</div>
+            <div>این یک متن آزمایشی برای امتحان ارسال تیکت هاست.</div>
+          </div>
+          <div className="flex items-center justify-center w-11 h-11 "></div>
+        </div>
+        <div className="flex flex-row items-end gap-x-2.5 mt-10">
+          <div className="flex items-center justify-center w-11 h-11 bg-blue-100 rounded-full">
+            <Image
+              src="/icons/user.svg"
+              layout="fixed"
+              width="14px"
+              height="14px"
+            />
+          </div>
+          <div className="flex-auto w-64 mb-7 rounded-2xl  rounded-bl-none">
+            <div>
+              <label
+                htmlFor="message"
+                className="block mb-3 text-sm font-medium text-gray-900"
+              >
+                متن تیکت
+              </label>
+              <textarea
+                id="message"
+                rows={4}
+                className="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 p-4"
+                placeholder="متن موردنظرتان را وارد کنید..."
+              ></textarea>
+            </div>
+          </div>
+          <div className="flex items-center justify-center w-11 h-11 "></div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default Id;
+export default TicketDetails;
