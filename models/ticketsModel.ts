@@ -16,3 +16,9 @@ export interface TicketsSendData {
   title: string;
   message: string;
 }
+
+export interface Message {
+  message: string;
+  userName: string;
+  isUser: boolean;
+}

@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { useCreateTicketData } from "./useTicketsData";
+import { useCreateTicketData } from "./useCreateTicketData";
 
 export const useCreateTicketForm = () => {
   const router = useRouter()

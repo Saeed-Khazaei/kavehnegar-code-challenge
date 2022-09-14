@@ -1,63 +1,39 @@
 import React from "react";
 import Image from "next/image";
 import Status from "../../components/Status";
-
-const fakeData = {
-  id: 2,
-  received: "2021/04/19 16:11:30",
-  title: "فاکتور رسمی",
-  message: "متن تیکت درخواست شده",
-  status: "answered",
-  user: "علی صالحی",
-  support: "علی دایی",
-  supportMessage: "این یک متن آزمایشی برای امتحان پاسخ تیکت هاست.",
-};
+import Message from "../../components/Message";
+import { useCloseTicketForm } from "../../hooks/useCloseTicketForm";
 
 const TicketDetails = () => {
+  const { isLoading, onCloseTicket, data } = useCloseTicketForm();
+  if (!data?.data) return null;
+
   return (
     <div className="bg-white px-10 py-9 rounded-lg divide-y">
       <div className="flex flex-row justify-between mb-2">
-        <div className="text-2xl font-bold">فاکتور رسمی</div>
+        <div className="text-2xl font-bold">{data.data.title}</div>
         <div className="flex flex-col gap-2">
-          <span>{new Date(fakeData.received).toLocaleDateString("fa-IR")}</span>
+          <span>
+            {new Date(data.data.received).toLocaleDateString("fa-IR")}
+          </span>
           <div className="flex flex-row items-center gap-2">
-            <Status status={fakeData.status} />
+            <Status status={data.data.status} />
           </div>
         </div>
       </div>
       <div className="pt-9 flex flex-col gap-4 px-16">
-        {fakeData.supportMessage.length > 0 ? (
-          <div className="flex flex-row items-end gap-x-2.5">
-            <div className="flex items-center justify-center w-11 h-11 rounded-full"></div>
-            <div className="flex-auto w-64 bg-red-50 mb-7 rounded-2xl  rounded-bl-none px-10 py-5">
-              <div className="font-bold mb-5">پشتیبانی: {fakeData.support}</div>
-              <div>{fakeData.supportMessage}</div>
-            </div>
-            <div className="flex items-center justify-center w-11 h-11 bg-pink-300 rounded-full	 ">
-              <Image
-                src="/icons/support.svg"
-                layout="fixed"
-                width="14px"
-                height="14px"
-              />
-            </div>
-          </div>
+        <Message
+          message={data.data.message}
+          userName={data.data.user}
+          isUser={true}
+        />
+        {data.data.supportMessage.length > 0 ? (
+          <Message
+            message={data.data.supportMessage}
+            userName={data.data.support}
+            isUser={false}
+          />
         ) : null}
-        <div className="flex flex-row items-end gap-x-2.5 ">
-          <div className="flex items-center justify-center w-11 h-11 bg-blue-100 rounded-full">
-            <Image
-              src="/icons/user.svg"
-              layout="fixed"
-              width="14px"
-              height="14px"
-            />
-          </div>
-          <div className="flex-auto w-64 bg-gray-50 mb-7 rounded-2xl  rounded-bl-none px-10 py-5">
-            <div className="font-bold mb-5">{fakeData.user}</div>
-            <div>{fakeData.message}</div>
-          </div>
-          <div className="flex items-center justify-center w-11 h-11 "></div>
-        </div>
         <div className="flex flex-row items-end gap-x-2.5 mt-10">
           <div className="flex items-center justify-center w-11 h-11 bg-blue-100 rounded-full">
             <Image
