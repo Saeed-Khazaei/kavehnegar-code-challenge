@@ -10,6 +10,9 @@ const fakeData = [
     title: "فاکتور رسمی",
     message: "متن تیکت درخواست شده",
     status: "pending",
+    user: "علی صالحی",
+    support: "",
+    supportMessage: "",
   },
   {
     id: 2,
@@ -17,10 +20,16 @@ const fakeData = [
     title: "فاکتور رسمی",
     message: "متن تیکت درخواست شده",
     status: "answered",
+    user: "علی صالحی",
+    support: "علی دایی",
+    supportMessage: "",
   },
 ];
 
 const Tickets: NextPage = () => {
+  const data = new Date();
+  console.log("new Date", data.toLocaleDateString("fa-IR"));
+
   return (
     <Wrapper title="لیست تیکت‌ها">
       <div className="overflow-x-auto relative bg-white p-2 rounded-lg ">
@@ -57,7 +66,7 @@ const Tickets: NextPage = () => {
                 className="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg group rounded-lg"
               >
                 <td className="rtl:first:rounded-r-lg ltr:first:rounded-l-lg py-4 px-6 whitespace-nowrap ">
-                  1401/2/23
+                  {row.received.toLocaleDateString("fa-IR")}
                 </td>
                 <td className="py-4 px-6 whitespace-nowrap">{row.title}</td>
                 <td className="py-4 px-6 whitespace-nowrap text-center">
