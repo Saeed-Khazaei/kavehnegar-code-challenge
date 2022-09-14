@@ -1,25 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import Wrapper from "../../components/Wrapper";
+import { useCreateTicketForm } from "../../hooks/useCreateTicketForm";
 
 const CreateTicket = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    message: "",
-  });
-
-  const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, title: e.target.value });
-  };
-  const onChangeMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setFormData({ ...formData, message: e.target.value });
-  };
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("formData", formData);
-  };
+  const { formData, onChangeMessage, onChangeTitle, onSubmit, isLoading } =
+    useCreateTicketForm();
 
   return (
     <Wrapper title="ایجاد تیکت جدید">
@@ -46,8 +33,10 @@ const CreateTicket = () => {
           title="ارسال تیکت"
           disabled={
             formData.title.trim().length == 0 ||
-            formData.message.trim().length == 0
+            formData.message.trim().length == 0 ||
+            isLoading
           }
+          loading={isLoading}
         />
       </form>
     </Wrapper>
