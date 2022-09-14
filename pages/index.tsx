@@ -1,6 +1,16 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      permanent: false,
+      destination: `/tickets/create`,
+    },
+    props: {},
+  };
+}
+
 const Home: NextPage = () => {
   return (
     <main>
