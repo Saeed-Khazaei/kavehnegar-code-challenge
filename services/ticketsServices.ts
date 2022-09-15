@@ -18,6 +18,6 @@ export default {
     return await axios.get<TicketsResponse>(`${ticketNextApi}?id=${id}`);
   },
   async closeTicket(id: string) {
-    return await axios.delete(`${ticketNextApi}?id=${id}`);
+    return await axios.put<TicketsResponse>(`${ticketNextApi}?id=${id}`);
   },
 }

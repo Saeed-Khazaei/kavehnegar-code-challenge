@@ -16,14 +16,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       res.status(400).end();
     }
   }
-  if (req.method == "DELETE") {
+  if (req.method == "PUT") {
     const oldData = await getDbDatas() as TicketsResponse[];
     let data = oldData.find(i => i.id == +id)
 
     if (data) {
-      data = { ...data, status: "closed" }
-      saveDbDatas([...oldData.filter(i => i.id !== data?.id), data].sort((a, b) => b.id - a.id))
-      res.status(201).end();
+      data = { ...data, status: "closed", update: new Date() }
+      saveDbDatas([...oldData.filter(i => i.id !== data?.id), data])
+      res.status(200).json(data);
     } else {
       res.status(400).end();
     }

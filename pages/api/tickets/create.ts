@@ -9,6 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const data: TicketsResponse = {
     "id": newId,
     "received": new Date(),
+    "update": new Date(),
     "status": "pending",
     "user": "سعید خزائی",
     "support": "",

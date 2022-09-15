@@ -5,6 +5,7 @@ export interface TicketsStatus {
 export interface TicketsResponse extends TicketsStatus {
   id: number;
   received: Date;
+  update: Date;
   title: string;
   message: string;
   user: string;

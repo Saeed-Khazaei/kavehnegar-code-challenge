@@ -61,7 +61,19 @@ const TicketDetails = () => {
           </div>
           <div className="flex items-center justify-center w-11 h-11 "></div>
         </div>
-        <button onClick={onCloseTicket}>CLOSE</button>
+        {data.data.status !== "closed" ? (
+          <div className="flex flex-row gap-2 items-center justify-end">
+            <button
+              className="text-black border disabled:bg-gray-300 focus:outline-none font-medium rounded-lg w-36 px-5 py-2.5 text-center self-end"
+              onClick={onCloseTicket}
+            >
+              بستن تیکت
+            </button>
+            <button className="text-white bg-pink-600 hover:bg-pink-800 disabled:bg-gray-300 focus:outline-none font-medium rounded-lg w-36 px-5 py-2.5 text-center self-end">
+              ارسال تیکت
+            </button>
+          </div>
+        ) : null}
       </div>
     </div>
   );

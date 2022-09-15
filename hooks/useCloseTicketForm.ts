@@ -13,12 +13,12 @@ export const useCloseTicketForm = () => {
     closeTicket(id)
   };
   const onSuccess = () => {
-    router.push(`/tickets`)
+    // router.push(`/tickets`)
   };
 
-  const { mutate: closeTicket, isLoading } = useCloseTicketData(onSuccess);
+  const { mutate: closeTicket, isLoading, data: onCloseData } = useCloseTicketData(onSuccess);
 
-  const { data, refetch } = useQuery(
+  const { data: ticketData, refetch } = useQuery(
     "ticket",
     () => ticketsServices.getTicket(id), {
     enabled: false
@@ -34,6 +34,6 @@ export const useCloseTicketForm = () => {
   return {
     onCloseTicket,
     isLoading,
-    data
+    data: { ...ticketData, ...onCloseData }
   }
 }
