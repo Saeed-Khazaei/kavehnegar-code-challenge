@@ -1,7 +1,7 @@
-import { useQuery, useMutation, useQueryClient } from 'react-query'
+import { useMutation } from 'react-query'
 import ticketsServices from '../services/ticketsServices'
 
-export const useCloseTicketData = (onSuccess: any) => {
-  return useMutation(ticketsServices.closeTicket, { onSuccess })
+export const useCloseTicketData = () => {
+  return useMutation(ticketsServices.closeTicket)
 }
 

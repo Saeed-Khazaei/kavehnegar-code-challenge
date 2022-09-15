@@ -6,7 +6,6 @@ const jsonDirectory = path.join(process.cwd(), 'helper');
 
 export const getDbDatas = async () => {
   const oldData = await fs.readFile(jsonDirectory + '/data.json', 'utf8');
-  console.log('oldData', oldData)
   return JSON.parse(oldData);
 }
 

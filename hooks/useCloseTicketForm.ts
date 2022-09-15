@@ -1,4 +1,3 @@
-import { AxiosResponse } from "axios";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useQuery } from "react-query";
@@ -12,11 +11,8 @@ export const useCloseTicketForm = () => {
   const onCloseTicket = () => {
     closeTicket(id)
   };
-  const onSuccess = () => {
-    // router.push(`/tickets`)
-  };
 
-  const { mutate: closeTicket, isLoading, data: onCloseData } = useCloseTicketData(onSuccess);
+  const { mutate: closeTicket, isLoading, data: onCloseData } = useCloseTicketData();
 
   const { data: ticketData, refetch } = useQuery(
     "ticket",

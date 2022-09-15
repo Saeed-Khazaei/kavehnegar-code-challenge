@@ -9,7 +9,7 @@ const TicketDetails = () => {
   if (!data?.data) return null;
 
   return (
-    <div className="bg-white px-10 py-9 rounded-lg divide-y">
+    <div className="bg-white px-5 py-4 md:px-10 md:py-9 rounded-lg divide-y">
       <div className="flex flex-row justify-between mb-2">
         <div className="text-2xl font-bold">{data.data.title}</div>
         <div className="flex flex-col gap-2">
@@ -21,7 +21,7 @@ const TicketDetails = () => {
           </div>
         </div>
       </div>
-      <div className="pt-9 flex flex-col gap-4 px-16">
+      <div className="flex flex-col gap-4 pt-5 md:pt-9 px-0 md:px-8 lg:px-16">
         <Message
           message={data.data.message}
           userName={data.data.user}
@@ -35,13 +35,17 @@ const TicketDetails = () => {
           />
         ) : null}
         <div className="flex flex-row items-end gap-x-2.5 mt-10">
-          <div className="flex items-center justify-center w-11 h-11 bg-blue-100 rounded-full">
-            <Image
-              src="/icons/user.svg"
-              layout="fixed"
-              width="14px"
-              height="14px"
-            />
+          <div
+            className={`flex items-center justify-center w-6 md:w-11 h-6 md:h-11`}
+          >
+            <div className="flex items-center justify-center w-6 md:w-11 h-6 md:h-11 bg-blue-100 rounded-full">
+              <Image
+                src="/icons/user.svg"
+                layout="fixed"
+                width="14px"
+                height="14px"
+              />
+            </div>
           </div>
           <div className="flex-auto w-64 mb-7 rounded-2xl  rounded-bl-none">
             <div>
@@ -59,7 +63,7 @@ const TicketDetails = () => {
               ></textarea>
             </div>
           </div>
-          <div className="flex items-center justify-center w-11 h-11 "></div>
+          <div className="flex items-center justify-center w-6 md:w-11 h-6 md:h-11 "></div>
         </div>
         {data.data.status !== "closed" ? (
           <div className="flex flex-row gap-2 items-center justify-end">
